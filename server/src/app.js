@@ -2,15 +2,18 @@ import dotenv from 'dotenv'
 dotenv.config()
 import express from 'express'
 import mongoose from 'mongoose'
+import userRouter from './api/routes/user.js'
 
 // EXPRESS APP
 const app = express()
+
+// MIDDLEWARES 
+app.use(express.json())
 
 // CONSTANTS
 const PORT = process.env.PORT || 5000
 
 // CONNECTING MONGODB ATLAS 
-console.log("SB Name "+ process.env.DB_NAME)
 const url = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@akshay.vlzrm.mongodb.net/${process.env.DB_NAME}`
 const options = {
     useNewUrlParser : true,
@@ -22,6 +25,9 @@ mongoose.connect(url, options).then(() => {
 }).catch(error => {
     console.log(error)
 })
+
+// ROUTES 
+app.use('/api/user/', userRouter)
 
 // HOME ROUTE
 app.get('/', (req, res) => {
