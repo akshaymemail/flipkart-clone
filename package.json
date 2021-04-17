@@ -1,0 +1,31 @@
+{
+  "name": "flipkart-clone",
+  "version": "1.0.0",
+  "description": "a flipkart website clone",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon server/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akshaymemail/flipkart-clone.git"
+  },
+  "keywords": [
+    "flipkart",
+    "ecommerce",
+    "react",
+    "redux",
+    "node.js",
+    "mongodb",
+    "mern"
+  ],
+  "author": "AKSHAY KUMAR SINGH",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akshaymemail/flipkart-clone/issues"
+  },
+  "homepage": "https://github.com/akshaymemail/flipkart-clone#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
