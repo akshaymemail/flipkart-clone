@@ -1,4 +1,4 @@
-const express = require('express')
+import express from 'express'
 
 // EXPRESS APP
 const app = express()

@@ -1,5 +1,6 @@
 {
   "name": "flipkart-clone",
+  "type": "module",
   "version": "1.0.0",
   "description": "a flipkart website clone",
   "main": "app.js",
