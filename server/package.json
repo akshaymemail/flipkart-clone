@@ -5,7 +5,7 @@
   "description": "a flipkart website clone",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon server/app.js"
+    "start": "nodemon src/app.js"
   },
   "repository": {
     "type": "git",
