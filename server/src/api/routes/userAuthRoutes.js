@@ -1,15 +1,15 @@
 import express from "express";
-import signup from "../controllers/auth/signup.js";
+import signup from "../controllers/userAuthControllers.js";
 
 // CREATING  ROUTER
 const userRouter = express.Router();
+
+// SIGNUP ROUTE
+userRouter.post("/signup", signup);
 
 // SIGNIN ROUTE
 userRouter.post("/signin", (req, res) => {
   // TODO...
 });
-
-// SIGNUP ROUTE
-userRouter.post("/signup", signup);
 
 export default userRouter;
