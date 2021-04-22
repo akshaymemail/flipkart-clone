@@ -15,10 +15,15 @@
 
 #--------------------------------------------
 
-POST http://localhost:5000/api/user/signin
-Content-Type: application/json
+# POST http://localhost:5000/api/user/signin
+# Content-Type: application/json
 
-{
-    "email" : "akshaymemail@gmail.com",
-    "password" : "123456"
-}
+# {
+#     "email" : "akshaymemail@gmail.com",
+#     "password" : "123456"
+# }
+
+#------------------------------------------
+POST http://localhost:5000/api/user/profile
+Content-Type: application/json
+Authorization: Baerer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDdiZmQ1YWQyOTU2YjJiM2NkZjE2ZGIiLCJlbWFpbCI6ImFrc2hheW1lbWFpbEBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTYxOTA5NTY5OCwiZXhwIjoxNjIwMzkxNjk4fQ.38n6Y11wWx4yZmCHRKboLIgXtr91XJbEqoqO1k9pq2Y
