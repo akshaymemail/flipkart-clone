@@ -1,7 +1,9 @@
 import User from "../../models/user.js";
 import bcrypt from 'bcrypt'
+import { generateToken } from "../../config/jwtConfig.js";
 
-const signup = (req, res) => {
+// SIGNUP CONTROLLER
+export const signup = (req, res) => {
   User.findOne({ email: req.body.email }, (err, foundUser) => {
     if (!err) {
       // there is no any error, check for user
@@ -42,4 +44,35 @@ const signup = (req, res) => {
   });
 };
 
-export default signup
+
+// SIGNIN CONTROLLER 
+export const signin = (req, res) => {
+  User.findOne({email : req.body.email}, (err, foundUser) => {
+    if(!err) {
+      // there is no error check if user found or not
+      if(foundUser){
+        // user exist so now check for password
+        if(bcrypt.compareSync(req.body.password, foundUser.hashPassword)){
+          // username and passowrd is correct
+          const {_id, firstName, lastName, email, role} = foundUser
+          res.status(200).json({
+            token : generateToken(foundUser),
+            user : {
+              _id,firstName, lastName, email, role,
+              fullName : `${firstName}`+` `+`${lastName}`
+            }
+          })
+          
+        } else {
+          res.status(400).json({message : "Enter username or password is incorrect!"})
+        }
+      } else {
+        // user not found 
+        res.status(404).json({message : "User not found!"})
+      }
+    } else {
+      // there is something error
+      res.status(400).json({message : err})
+    }
+  })
+}

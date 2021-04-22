@@ -54,13 +54,6 @@ const userSchema = new mongoose.Schema({
     }
 }, {timestamps : true})
 
-// methods 
-userSchema.methods = {
-    authenticate: password => {
-        return bcrypt.compareSync(password, this.hashedPassword)
-    }
-}
-
 // CREATING USER MODEL 
 const User = mongoose.model('User', userSchema)
 
