@@ -1,5 +1,5 @@
 import express from 'express'
-import { signup } from '../controllers/adminAuthControllers.js'
+import { signin, signup } from '../controllers/adminAuthControllers.js'
 
 const adminRouter = express.Router()
 
@@ -7,8 +7,6 @@ const adminRouter = express.Router()
 adminRouter.post('/signup', signup)
 
 // ADMIN SIGNIN ROUTE 
-adminRouter.post('/signin', (req, res) => {
-    res.status(200).json({message : 'Signin API is working'})
-})
+adminRouter.post('/signin', signin)
 
 export default adminRouter
