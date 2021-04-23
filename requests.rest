@@ -24,6 +24,20 @@
 # }
 
 #------------------------------------------
-POST http://localhost:5000/api/user/profile
+
+# POST http://localhost:5000/api/user/profile
+# Content-Type: application/json
+# Authorization: Baerer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDdiZmQ1YWQyOTU2YjJiM2NkZjE2ZGIiLCJlbWFpbCI6ImFrc2hheW1lbWFpbEBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTYxOTA5NTY5OCwiZXhwIjoxNjIwMzkxNjk4fQ.38n6Y11wWx4yZmCHRKboLIgXtr91XJbEqoqO1k9pq2Y
+
+#0----------------------------------------------- 
+
+ POST http://localhost:5000/api/admin/signup
 Content-Type: application/json
-Authorization: Baerer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDdiZmQ1YWQyOTU2YjJiM2NkZjE2ZGIiLCJlbWFpbCI6ImFrc2hheW1lbWFpbEBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTYxOTA5NTY5OCwiZXhwIjoxNjIwMzkxNjk4fQ.38n6Y11wWx4yZmCHRKboLIgXtr91XJbEqoqO1k9pq2Y
+
+{
+    "firstName" : "Hungry",
+    "lastName" : "Pussy",
+    "email" : "hungrypussy@gmail.com",
+    "username" : "hungrypussy",
+    "password" : "123456"
+}

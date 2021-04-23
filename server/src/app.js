@@ -2,6 +2,7 @@ import dotenv from 'dotenv'
 dotenv.config()
 import express from 'express'
 import mongoose from 'mongoose'
+import adminRouter from './api/routes/adminAuthRoutes.js'
 import profileRouter from './api/routes/profileRoutes.js'
 import userRouter from './api/routes/userAuthRoutes.js'
 
@@ -28,8 +29,9 @@ mongoose.connect(url, options).then(() => {
 })
 
 // ROUTES 
-app.use('/api/user/', userRouter)
+app.use('/api/user', userRouter)
 app.use('/api/user', profileRouter)
+app.use('/api/admin', adminRouter)
 
 // HOME ROUTE
 app.get('/', (req, res) => {
