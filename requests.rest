@@ -42,7 +42,7 @@
 #     "password" : "123456"
 # }
 
-#----------------------------------------------- 
+#------------------REQUEST VALIDATION----------------------------- 
 
 # POST http://localhost:5000/api/admin/signin
 # Content-Type: application/json
@@ -54,13 +54,23 @@
 
 #-------------------------------------------------
 
-POST http://localhost:5000/api/admin/signup
- Content-Type: application/json
+# POST http://localhost:5000/api/admin/signup
+#  Content-Type: application/json
+
+# {
+#     "firstName" : "Pussy",
+#     "lastName" : "Cat",
+#     "email" : "pussycat@gmail.com",
+#     "username" : "pussycat",
+#     "password" : "123456"
+# }
+
+#--------------------------------------------
+
+POST http://localhost:5000/api/user/signin
+Content-Type: application/json
 
 {
-    "firstName" : "Pussy",
-    "lastName" : "Cat",
-    "email" : "pussycat@gmail.com",
-    "username" : "pussycat",
+    "email" : "akshaymemail@gmail.com",
     "password" : "123456"
 }
