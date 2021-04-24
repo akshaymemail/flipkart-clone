@@ -1,5 +1,5 @@
 import express from "express";
-import { userSigninValidator } from "../../validators/userAuthValidator.js";
+import { userSigninValidator, userSignupValidator } from "../../validators/userAuthValidator.js";
 import {signup, signin} from '../controllers/userAuthControllers.js'
 import isRequestValidated from '../../validators/requestValidatedResult.js'
 
@@ -7,7 +7,7 @@ import isRequestValidated from '../../validators/requestValidatedResult.js'
 const userRouter = express.Router();
 
 // SIGNUP ROUTE
-userRouter.post("/signup" , signup);
+userRouter.post("/signup" ,userSignupValidator, isRequestValidated, signup);
 
 // SIGNIN ROUTE
 userRouter.post("/signin", userSigninValidator, isRequestValidated , signin );

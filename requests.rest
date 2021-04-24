@@ -67,10 +67,23 @@
 
 #--------------------------------------------
 
-POST http://localhost:5000/api/user/signin
+# POST http://localhost:5000/api/user/signin
+# Content-Type: application/json
+
+# {
+#     "email" : "akshaymemail@gmail.com",
+#     "password" : "123456"
+# }
+
+#--------------------------------------------
+ 
+POST http://localhost:5000/api/user/signup
 Content-Type: application/json
 
 {
-    "email" : "akshaymemail@gmail.com",
-    "password" : "123456"
+    "firstName" : "Rezwan",
+    "lastName" : "Khan",
+    "email" : "rezwankhan@gmail.com",
+    "username" : "rezwankhan",
+    "password" :"123456"
 }
