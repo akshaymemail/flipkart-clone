@@ -48,6 +48,6 @@ POST http://localhost:5000/api/admin/signin
 Content-Type: application/json
 
 {
-    "email" : "hungrypussy@gmail.com",
-    "password" : "123456"
+   "email" : "hungrypussy@gmail.com",
+   "password" : "123456"
 }
