@@ -14,7 +14,6 @@ export const generateToken = user => {
 // VERIFYING USER TO MANAGE SESSIONS
 export const isAuth = (req, res, next) => {
     const authorization = req.headers.authorization
-    console.log(req.headers)
     // checking if Authorization is exist or not
     if(authorization){
         // exist means tokens are found, now we need to verfy if the user is valid or not
@@ -29,6 +28,6 @@ export const isAuth = (req, res, next) => {
         })
     }else {
         // token doesn't exist
-        res.status(400).json({message : 'Token not found!'})
+        res.status(400).json({message : 'Authorization is required!'})
     }
 }

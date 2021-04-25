@@ -77,13 +77,28 @@
 
 #--------------------------------------------
  
-POST http://localhost:5000/api/user/signup
-Content-Type: application/json
+# POST http://localhost:5000/api/user/signup
+# Content-Type: application/json
 
-{
-    "firstName" : "Rezwan",
-    "lastName" : "Khan",
-    "email" : "rezwankhan@gmail.com",
-    "username" : "rezwankhan",
-    "password" :"123456"
-}
+# {
+#     "firstName" : "Rezwan",
+#     "lastName" : "Khan",
+#     "email" : "rezwankhan@gmail.com",
+#     "username" : "rezwankhan",
+#     "password" :"123456"
+# }
+
+#--------------------------------------------
+ 
+# POST http://localhost:5000/api/category/create
+# Content-Type: application/json
+# Authorization: Baerer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDgyODc2M2Y5YTdiNzM0YWMyNDk2NmQiLCJlbWFpbCI6Imh1bmdyeXB1c3N5QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTYxOTM0ODUyNiwiZXhwIjoxNjIwNjQ0NTI2fQ.umwFl3fYx40uNkjoLzmSJaRWuMvRRPV71R22cOoB0m8
+
+# {
+#     "name" : "Nokia",
+#     "parentId" : "608516f9a2622d133c39d8f4"
+# }
+
+#--------------------------------------------
+
+GET http://localhost:5000/api/category/categories

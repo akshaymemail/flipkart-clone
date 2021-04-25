@@ -41,7 +41,8 @@ export const signin = (req, res) => {
         if(!err){
             // there is no any error, check for user
             if(foundUser){
-                // user with the given email found
+                if(foundUser.role === 'admin'){
+                    // user with the given email found
                 // now check for password
                 if(bcrypt.compareSync(req.body.password, foundUser.hashPassword) && foundUser.role === 'admin'){
                     // found right credentials 
@@ -56,6 +57,7 @@ export const signin = (req, res) => {
                 }else {
                     // either username or password is incorrect 
                     res.status(401).json({message : 'Either username or password is incorrect!'})
+                }
                 }
             } else {
                 // user with given email not found 
