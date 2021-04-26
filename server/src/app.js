@@ -4,6 +4,7 @@ import express from 'express'
 import mongoose from 'mongoose'
 import adminRouter from './api/routes/adminAuthRoutes.js'
 import categoryRoutes from './api/routes/categoryRoutes.js'
+import productRoutes from './api/routes/productRoutes.js'
 import profileRouter from './api/routes/profileRoutes.js'
 import userRouter from './api/routes/userAuthRoutes.js'
 
@@ -34,6 +35,7 @@ app.use('/api/user', userRouter)
 app.use('/api/user', profileRouter)
 app.use('/api/admin', adminRouter)
 app.use('/api/category',categoryRoutes)
+app.use('/api/product', productRoutes)
 
 // HOME ROUTE
 app.get('/', (req, res) => {

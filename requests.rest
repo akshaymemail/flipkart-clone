@@ -102,3 +102,8 @@
 #--------------------------------------------
 
 GET http://localhost:5000/api/category/categories
+
+#--------------------------------------------
+
+# POST http://localhost:5000/api/product/create
+# Authorization: Baerer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDgyODc2M2Y5YTdiNzM0YWMyNDk2NmQiLCJlbWFpbCI6Imh1bmdyeXB1c3N5QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTYxOTQzNzU2MCwiZXhwIjoxNjIwNzMzNTYwfQ.FkvxhT0Smsn-xOmcuODAe2JW8BTEGj8x3FZBRaxHuIY
