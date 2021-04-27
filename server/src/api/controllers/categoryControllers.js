@@ -33,6 +33,11 @@ export const createCategory = (req, res) => {
     if(req.body.parentId !== undefined){
         categoryObject.parentId = req.body.parentId
     }
+
+    // attatch the image path if available
+    if(req.file){
+        categoryObject.categoryImage = `${process.env.DOMAIN}/public/${req.file.filename}`
+    }
     new Category(categoryObject).save((err, savedCategory) => {
         if(!err){
             res.status(201).json({savedCategory})

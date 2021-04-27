@@ -8,6 +8,7 @@ import categoryRoutes from './api/routes/categoryRoutes.js'
 import productRoutes from './api/routes/productRoutes.js'
 import profileRouter from './api/routes/profileRoutes.js'
 import userRouter from './api/routes/userAuthRoutes.js'
+import path,{dirname} from 'path'
 
 // EXPRESS APP
 const app = express()
@@ -30,6 +31,9 @@ mongoose.connect(url, options).then(() => {
 }).catch(error => {
     console.log(error)
 })
+
+// STATIC FILES
+app.use('/public',express.static('upload_files'))
 
 // ROUTES 
 app.use('/api/user', userRouter)
