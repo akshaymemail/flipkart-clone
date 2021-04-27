@@ -101,9 +101,23 @@
 
 #--------------------------------------------
 
-GET http://localhost:5000/api/category/categories
+# GET http://localhost:5000/api/category/categories
 
 #--------------------------------------------
 
 # POST http://localhost:5000/api/product/create
 # Authorization: Baerer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDgyODc2M2Y5YTdiNzM0YWMyNDk2NmQiLCJlbWFpbCI6Imh1bmdyeXB1c3N5QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTYxOTQzNzU2MCwiZXhwIjoxNjIwNzMzNTYwfQ.FkvxhT0Smsn-xOmcuODAe2JW8BTEGj8x3FZBRaxHuIY
+
+#--------------------------------------------
+
+POST http://localhost:5000/api/user/cart/addToCart
+Content-Type: application/json
+Authorization: Baerer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDdiZmQ1YWQyOTU2YjJiM2NkZjE2ZGIiLCJlbWFpbCI6ImFrc2hheW1lbWFpbEBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTYxOTUwNzcyNiwiZXhwIjoxNjIwODAzNzI2fQ.agGROPXLJrfEbCG9a8dvRGV_f0tT9SFIOBES5jJCk5c
+
+{
+    "cartItem": {
+        "product" : "608806a746d4fa1dcc69bb7b",
+        "quantity" : "1",
+        "price": "13999"
+    }
+}

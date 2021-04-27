@@ -3,6 +3,7 @@ dotenv.config()
 import express from 'express'
 import mongoose from 'mongoose'
 import adminRouter from './api/routes/adminAuthRoutes.js'
+import cartRoutes from './api/routes/cartRoutes.js'
 import categoryRoutes from './api/routes/categoryRoutes.js'
 import productRoutes from './api/routes/productRoutes.js'
 import profileRouter from './api/routes/profileRoutes.js'
@@ -22,7 +23,7 @@ const url = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@aks
 const options = {
     useNewUrlParser : true,
     useUnifiedTopology : true,
-    useCreateIndex : true
+    useCreateIndex : true,
 }
 mongoose.connect(url, options).then(() => {
     console.log('Connected To MongoDB Atlas !')
@@ -36,6 +37,7 @@ app.use('/api/user', profileRouter)
 app.use('/api/admin', adminRouter)
 app.use('/api/category',categoryRoutes)
 app.use('/api/product', productRoutes)
+app.use('/api/user/cart', cartRoutes)
 
 // HOME ROUTE
 app.get('/', (req, res) => {
