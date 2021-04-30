@@ -15,9 +15,15 @@ function Signup() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
+  // fires up on form submit
+  const handleSubmit = e => {
+    // TODO .....
+    alert('signup form was submitted!')
+  }
+
   return (
     <Container>
-      <Form className="mt-5 form">
+      <Form className="mt-5 form" onSubmit={handleSubmit} >
         <Alert variant="info">Create an admin account!</Alert>
         <Form.Row>
           <Col md={6}>

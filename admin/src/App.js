@@ -7,15 +7,14 @@ import Header from "./components/Header/Header";
 
 function App() {
   return (
-    <div style={{minHeight : '100vh'}} className='bg-light' >
+    <div style={{ minHeight: "100vh" }} className="bg-light">
       <BrowserRouter>
-      <Header />
-      <Route path="/" exact component={Home} />
-      <Route path="/login" component={Login} />
-      <Route path="/signup" component={Signup} />
-    </BrowserRouter>
+        <Header />
+        <Route path="/" exact component={Home} />
+        <Route path="/login" component={Login} />
+        <Route path="/signup" component={Signup} />
+      </BrowserRouter>
     </div>
-
   );
 }
 

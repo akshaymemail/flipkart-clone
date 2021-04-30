@@ -9,9 +9,16 @@ function Login() {
   // useState hook
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  // fires up on form submit 
+  const handleSubmit = e => {
+    // TODO .....
+    alert('signin form was submitted!')
+  }
+
   return (
     <Container>
-      <Form className="mt-5 form">
+      <Form className="mt-5 form" onSubmit={handleSubmit} >
         <Alert variant="info">Login with your admin account!</Alert>
         <Input label="Email Address" type="email" placeholder="Your Email" value={email} onChange={ e => setEmail(e.target.value)} />
         <Input label="Password" type="password" placeholder="Passowrd" value={password} onChange={ e => setPassword(e.target.value)} />
