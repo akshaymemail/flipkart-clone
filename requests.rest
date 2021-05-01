@@ -44,13 +44,13 @@
 
 #------------------REQUEST VALIDATION----------------------------- 
 
-# POST http://localhost:5000/api/admin/signin
-# Content-Type: application/json
+POST http://localhost:5000/api/admin/signin
+Content-Type: application/json
 
-# {
-#    "email" : "hungrypussy@gmail.com",
-#    "password" : "123456"
-# }
+{
+   "email" : "aksaymemail@gmail.com",
+   "password" : "123456"
+}
 
 #-------------------------------------------------
 
@@ -110,14 +110,14 @@
 
 #--------------------------------------------
 
-POST http://localhost:5000/api/user/cart/addToCart
-Content-Type: application/json
-Authorization: Baerer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDdiZmQ1YWQyOTU2YjJiM2NkZjE2ZGIiLCJlbWFpbCI6ImFrc2hheW1lbWFpbEBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTYxOTUwNzcyNiwiZXhwIjoxNjIwODAzNzI2fQ.agGROPXLJrfEbCG9a8dvRGV_f0tT9SFIOBES5jJCk5c
+# POST http://localhost:5000/api/user/cart/addToCart
+# Content-Type: application/json
+# Authorization: Baerer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDdiZmQ1YWQyOTU2YjJiM2NkZjE2ZGIiLCJlbWFpbCI6ImFrc2hheW1lbWFpbEBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTYxOTUwNzcyNiwiZXhwIjoxNjIwODAzNzI2fQ.agGROPXLJrfEbCG9a8dvRGV_f0tT9SFIOBES5jJCk5c
 
-{
-    "cartItem": {
-        "product" : "608806a746d4fa1dcc69bb7b",
-        "quantity" : "1",
-        "price": "13999"
-    }
-}
+# {
+#     "cartItem": {
+#         "product" : "608806a746d4fa1dcc69bb7b",
+#         "quantity" : "1",
+#         "price": "13999"
+#     }
+# }

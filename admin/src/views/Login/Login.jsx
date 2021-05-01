@@ -1,29 +1,59 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
-import Input from "../../components/Inputs/Input";
+import { useDispatch, useSelector } from "react-redux";
+import { adminLoginAction } from "../../redux/admin/authentication/actions";
 
-function Login() {
+function Login(props) {
   // useState hook
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  // fires up on form submit 
-  const handleSubmit = e => {
-    // TODO .....
-    alert('signin form was submitted!')
-  }
+  // dispatch
+  const dispatch = useDispatch();
+
+  // fires up on form submit
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(adminLoginAction({email, password}))
+  };
+
+  // admin signin state
+  const {loading, error, isLoggedIn} = useSelector(state => state.adminSignin)
+
+  useEffect(() => {
+    if(isLoggedIn){
+      props.history.push('/')
+    }
+  }, [isLoggedIn, props.history])
 
   return (
     <Container>
-      <Form className="mt-5 form" onSubmit={handleSubmit} >
-        <Alert variant="info">Login with your admin account!</Alert>
-        <Input label="Email Address" type="email" placeholder="Your Email" value={email} onChange={ e => setEmail(e.target.value)} />
-        <Input label="Password" type="password" placeholder="Passowrd" value={password} onChange={ e => setPassword(e.target.value)} />
+      <Form className="mt-5 form" onSubmit={handleSubmit}>
+        {error ? <Alert variant="danger">{error}</Alert>
+        : loading ? <Alert variant="info">Logging you ....</Alert>  : <Alert variant="info">Login with your admin account!</Alert>}
+        <Form.Group controlId="email">
+          <Form.Label>Email Address</Form.Label>
+          <Form.Control
+            type="email"
+            placeholder="Your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </Form.Group>
+        <Form.Group controlId="password">
+          <Form.Label>Password</Form.Label>
+          <Form.Control
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </Form.Group>
         <Button variant="primary" type="submit" className="btn-block">
-          Login
+          {loading ? <li className="fa fa-spinner fa-spin" ></li> : 'Login'}
         </Button>
       </Form>
     </Container>
