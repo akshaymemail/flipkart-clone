@@ -29,7 +29,7 @@ function Login(props) {
     <Container>
       <Form className="mt-5 form" onSubmit={handleSubmit}>
         {error ? <Alert variant="danger">{error}</Alert>
-        : loading ? <Alert variant="info">Logging you ....</Alert>  : <Alert variant="info">Login with your admin account!</Alert>}
+        : loading ? <Alert variant="info">Logging you ...</Alert>  : <Alert variant="info">Login with your admin account!</Alert>}
         <Form.Group controlId="email">
           <Form.Label>Email Address</Form.Label>
           <Form.Control

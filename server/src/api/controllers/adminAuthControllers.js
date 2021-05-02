@@ -9,7 +9,7 @@ export const signup = (req, res) => {
       // no error check if there is existing user or not
       if (foundUser) {
         // user already exist
-        return res.status(400).json({ message: "user already exist!" });
+        return res.status(400).json({ message: "email already registered ! , please login" });
       }
 
       // user is new so registered
@@ -23,7 +23,7 @@ export const signup = (req, res) => {
         role: "admin",
       }).save((err, savedUser) => {
         if (!err) {
-          res.status(201).json({message : 'User created successfully', createUser: savedUser });
+          res.status(201).json({message : 'account created successfully, please login now!', createUser: savedUser });
         } else {
           res.json({ message: err });
         }

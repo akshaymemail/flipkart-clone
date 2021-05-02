@@ -1,8 +1,9 @@
 import { combineReducers } from "redux";
-import { adminLoginReducer } from "./admin/authentication/reducers";
+import { adminLoginReducer, adminSignupReducer } from "./admin/authentication/reducers";
 
 const reducers = combineReducers({
-    adminSignin : adminLoginReducer
+    adminSignin : adminLoginReducer,
+    adminSignup : adminSignupReducer
 })
 
 export default reducers
