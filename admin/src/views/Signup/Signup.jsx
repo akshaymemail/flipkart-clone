@@ -1,12 +1,17 @@
-import React from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
 import Col from "react-bootstrap/Col";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
-function Signup() {
+function Signup(props) {
+  // admin login state 
+  const {isLoggedIn} = useSelector(state => state.adminSignin)
+  if(isLoggedIn){
+    props.history.push('/')
+  }
   // useState Hook
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");

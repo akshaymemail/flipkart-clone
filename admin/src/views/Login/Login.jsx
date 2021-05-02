@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
@@ -7,6 +7,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { adminLoginAction } from "../../redux/admin/authentication/actions";
 
 function Login(props) {
+  // admin signin state
+  const {loading, error, isLoggedIn} = useSelector(state => state.adminSignin)
+  if(isLoggedIn){
+    props.history.push('/')
+  }
   // useState hook
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -19,15 +24,6 @@ function Login(props) {
     e.preventDefault();
     dispatch(adminLoginAction({email, password}))
   };
-
-  // admin signin state
-  const {loading, error, isLoggedIn} = useSelector(state => state.adminSignin)
-
-  useEffect(() => {
-    if(isLoggedIn){
-      props.history.push('/')
-    }
-  }, [isLoggedIn, props.history])
 
   return (
     <Container>

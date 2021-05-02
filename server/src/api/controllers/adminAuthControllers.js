@@ -23,7 +23,7 @@ export const signup = (req, res) => {
         role: "admin",
       }).save((err, savedUser) => {
         if (!err) {
-          res.status(201).json({ createUser: savedUser });
+          res.status(201).json({message : 'User created successfully', createUser: savedUser });
         } else {
           res.json({ message: err });
         }

@@ -1,9 +1,9 @@
-import { ADMIN_LOGIN_FAILURE, ADMIN_LOGIN_REQUEST, ADMIN_LOGIN_SUCCESS } from "./types"
+import { ADMIN_LOGIN_FAILURE, ADMIN_LOGIN_REQUEST, ADMIN_LOGIN_SUCCESS, ADMIN_LOGOUT_SUCCESS } from "./types"
 
 // ADMIN LOGIN INITIAL STATE
 const adminLoginInitialState = {
     loading : false,
-    isLoggedIn : localStorage.getItem('isLoggedIn') ? localStorage.getItem('isLoggedIn') : false,
+    isLoggedIn : localStorage.getItem('token') ? true : false,
     token : localStorage.getItem('token') ? localStorage.getItem('token') : null,
     user : localStorage.getItem('userInfo') ? JSON.parse(localStorage.getItem('userInfo')) : {},
     error : ''
@@ -25,6 +25,7 @@ export const adminLoginReducer = (state = adminLoginInitialState, action) => {
             loading : false,
             error : action.payload
         }
+        case ADMIN_LOGOUT_SUCCESS : return {}
         default : return  state
     }
 }

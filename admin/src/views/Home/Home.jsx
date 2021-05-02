@@ -1,8 +1,14 @@
-import React from "react";
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Container from 'react-bootstrap/Container'
+import {useSelector} from 'react-redux'
 
-function Home() {
+function Home(props) {
+  // admin signin state 
+  const {isLoggedIn} = useSelector(state => state.adminSignin)
+  if(!isLoggedIn){
+    props.history.push('/login')
+  }
+
   return (
     <div>
       <Jumbotron className='bg-light' fluid>
