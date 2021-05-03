@@ -44,13 +44,13 @@
 
 #------------------REQUEST VALIDATION----------------------------- 
 
-POST http://localhost:5000/api/admin/signin
-Content-Type: application/json
+# POST http://localhost:5000/api/admin/signin
+# Content-Type: application/json
 
-{
-   "email" : "aksaymemail@gmail.com",
-   "password" : "123456"
-}
+# {
+#    "email" : "aksaymemail@gmail.com",
+#    "password" : "123456"
+# }
 
 #-------------------------------------------------
 
@@ -121,3 +121,4 @@ Content-Type: application/json
 #         "price": "13999"
 #     }
 # }
+
